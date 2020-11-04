@@ -1,0 +1,233 @@
+body{
+	font-family: Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	color: #222222;
+}
+.clearfix:after{
+	content: '';
+	display: table;
+	width: 100%;
+	clip: both;
+}
+div{
+	box-sizing: border-box;
+}
+header{
+	background: url(https://images.pexels.com/photos/513939/pexels-photo-513939.jpeg) no-repeat center top / cover;
+	padding-bottom: 160px;
+}
+.container{
+	width: 930px;
+	margin: 0 auto
+}
+nav{
+	float: right;
+	margin-top: 50px;
+	position: relative;
+}
+.menu{
+	padding: 0;
+	margin:0;
+	display: flex;
+	justify-content: center;
+	list-style: none;
+
+}
+.menu li{
+	margin-right: 41px;
+	font-size: 14px;
+}
+.menu li a{
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	position: relative; // и ссылку надо было сделать relative - это очень важно!!!!!
+}
+
+li.dws-li a::before { /*тут ошибка мы анимируем ссылку*/
+	content: "";
+	width: 0px; //тут была ошибка
+	height: 3px;
+	background-color: #ff2117;
+	position: absolute; //это тоже (все глупышка)
+	top: 100%;
+	left: 0%;
+	z-index: 5;
+	transition: .5s;
+	mix-blend-mode: multiply;
+}
+
+	li.dws-li a::after{
+		 content: '';
+		 width: 0px;
+		 height: 3px;
+		 background-color: orange;
+		 position: absolute;
+		 top: 100%;
+		 right: 0;
+		 z-index: 5;
+		 transition: .5s;
+		 mix-blend-mode: multiply;
+	}
+
+li.dws-li:hover {
+	/*background-color: #e5eae8;*/
+}
+
+/* Вот эти тоже были очень важны
+:hover - при наведении изменяем а:before */
+
+li.dws-li:hover a:before{
+ width: 50%;
+ transform: translateX(100%);
+}
+/* тут тоже самое */
+li.dws-li:hover a:after{
+ width: 50%;
+ transform: translateX(-100%);
+}
+
+/*************** ТУТ ЗАКАНЧИВАЕТСЯ МЕНЮ *******************/
+/******** ТУТ начинается остальное (пиши комментарии, чтобы не запутаться) *******/
+.titles__first{
+	font-size: 40px;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 180px;
+}
+h1{
+	font-size: 75px;
+	color: #fff;
+	text-transform: uppercase;
+	margin: 15px;
+	text-align: center;
+}
+.button{
+	background: #fed136;
+	color: #484543;
+	border-radius: 3px;
+	display: block;
+	width: 240px;
+	padding: 20px 0;
+	margin: 0 auto;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 50px;
+}
+.title{
+	padding-top: 115px;
+}
+.title h2{
+	font-size:40px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0;
+
+}
+.title p{
+	color: #777777;
+	text-align: center;
+	font-size: 16px;
+	margin-top: 5px;
+}
+.services{
+	margin-top: 80px;
+}
+.services__item{
+	width: 270px;
+	float: left;
+	text-align: center;
+
+}
+.services__item h3{
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.services__item p{
+	font-size: 14px;
+	color: #777777;
+	line-height: 1.55em;
+}
+.services__item:last-child{
+	float: right;
+}
+.services__item:nth-child(2){
+	margin-left: 60px;
+}
+#services{
+	padding-bottom: 120px;
+}
+#portfolio{
+	background: #f7f7f7;
+	padding-bottom: 120px;
+} 
+.works img{
+	float: left;
+	margin-top: 70px;
+	height: 400px;
+	width: 600px;
+}
+.works img: nth-child(2){
+	margin-left: 29px;
+}
+.works img:last-child{
+	float: right;
+}
+.azamat{
+	max-width: 300px;
+	margin-right:10px;
+	border-radius: 5px;
+
+}
+.js1 h3,p{
+	margin: 0;
+	padding: 0;
+}
+.js2 h3,p{
+	margin: 0;
+	padding: 0;
+}
+.list{
+	margin-left: 0px;
+	display: flex;
+	flex-direction: column;
+	width: 808px;
+}
+.js1{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: flex-start;
+}
+.js2{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: flex-start;
+	padding-left: 350px;
+	padding-bottom:20px;
+	padding-top: 20px;
+}
+.js1 img{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	float: left;
+}
+.js2 img{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	float: left;
+}
+.text{
+	display: block;
+	width: 346px;
+	margin-left: 10px;
+}
